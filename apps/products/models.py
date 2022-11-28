@@ -1,5 +1,8 @@
 from django.db import models
 
+from apps.authors.models import Author
+from apps.categories.models import Category
+
 LANGUAGE = [
     ('EN', 'English'),
     ('UZ', 'Uzbek'),
@@ -9,8 +12,8 @@ LANGUAGE = [
 
 class Product(models.Model):
     name = models.CharField("Book Name", max_length=200)
-    category = models.ManyToManyField('categories.Category', related_name='category', verbose_name="Book Category")
-    author = models.ForeignKey('authors.Author', on_delete=models.SET_NULL, null=True, verbose_name="Book Author")
+    category = models.ManyToManyField(Category, related_name='category', verbose_name="Book Category")
+    author = models.ForeignKey(Author, on_delete=models.SET_NULL, null=True, verbose_name="Book Author")
     description = models.TextField("Book Description")
 
     file = models.FileField("File of this Book", upload_to="files/books/%Y/%m/%d")

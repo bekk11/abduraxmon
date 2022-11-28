@@ -1,10 +1,9 @@
 # Rest framework
 from rest_framework import serializers
 
-# Project
-from products.models import Product
-from categories.models import Category
-from authors.models import Author
+from apps.authors.models import Author
+from apps.categories.models import Category
+from apps.products.models import Product
 
 
 class ProductCategorySerializer(serializers.ModelSerializer):

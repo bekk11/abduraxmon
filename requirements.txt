@@ -1,7 +1,7 @@
 asgiref==3.4.1
 certifi==2022.9.14
 charset-normalizer~=2.0.0
-Django==3.2.15
+Django==3.2.9
 django-debug-toolbar==3.2.4
 django-filter~=1.1
 django-modeltranslation==0.18.4
